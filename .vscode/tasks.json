@@ -32,9 +32,8 @@
       "command": "npm",
       "args": [
         "run",
-        "start",
+        "start:desktop",
         "--",
-        "desktop",
         "--app",
         "excel"
       ],
@@ -50,9 +49,8 @@
       "command": "npm",
       "args": [
         "run",
-        "start",
+        "start:desktop",
         "--",
-        "desktop",
         "--app",
         "outlook"
       ],
@@ -68,9 +66,8 @@
       "command": "npm",
       "args": [
         "run",
-        "start",
+        "start:desktop",
         "--",
-        "desktop",
         "--app",
         "powerpoint"
       ],
@@ -86,9 +83,8 @@
       "command": "npm",
       "args": [
         "run",
-        "start",
+        "start:desktop",
         "--",
-        "desktop",
         "--app",
         "word"
       ],
