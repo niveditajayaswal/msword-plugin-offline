@@ -30,12 +30,16 @@
   "dependencies": {
     "@fluentui/react-components": "^9.46.8",
     "@fluentui/react-icons": "^2.0.232",
+    "@microsoft/office-js": "^1.1.96",
     "core-js": "^3.36.0",
     "es6-promise": "^4.2.8",
+    "lorem-ipsum": "^2.0.8",
     "office-addin-taskpane-react": "file:",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "regenerator-runtime": "^0.14.1"
+    "regenerator-runtime": "^0.14.1",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",
