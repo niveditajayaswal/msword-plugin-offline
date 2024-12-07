@@ -1,49 +1,123 @@
-from flask import Flask, request, jsonify, session
-from flask_socketio import SocketIO, emit
-from flask_cors import CORS
-from datetime import datetime
+# import threading
+from flask import Flask, request, jsonify
 import os
+from flask.cli import F
+from langchain_groq import ChatGroq
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.docstore.document import Document
+from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain_core.prompts import ChatPromptTemplate
+from langchain.chains import create_retrieval_chain
+from langchain_community.vectorstores import FAISS
+from langchain_community.document_loaders import PyPDFDirectoryLoader
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from dotenv import load_dotenv
+from flask_cors import CORS
+
 import time
 
 
+load_dotenv()
+
+groq_api_key = "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"
+os.environ["GOOGLE_API_KEY"] = "AIzaSyDLggVsJM9ukyY_XmPpRu7_j28IVnr24kU"
+
 app = Flask(__name__)
-cors = CORS(app)
-app.secret_key = "your_secret_key"  # Required for session handling
-app.config["SECRET_KEY"] = "your_secret_key"
-socketio = SocketIO(app, cors_allowed_origins="*")
+CORS(app)
 
 
-if not os.path.exists("text.txt"):
-    with open("text.txt", "w") as file:
-        file.write(f"This is a test text at {datetime.now()}")
+llm = ChatGroq(groq_api_key=groq_api_key, model_name="Llama3-8b-8192")
 
 
-@app.route("/save_text", methods=["POST"])
-def save_text():
-    data = request.get_json()
-    text = data["text"]
-    with open("text.txt", "w") as file:
-        file.write(f"\n{text} at {datetime.now()}")
+def get_prompt():
+    return ChatPromptTemplate.from_template(
+        """
+        Answer the questions based on the provided context only.
+        Please provide the most accurate response based on the question.
+        Do not start the answer with `Based on the provided context,` or `According to the provided context,`.
+        Do not provide any information that is not present in the context.
+        Do not provide any information that is not asked for.
+        Always provide the most accurate and concise response.
+        <context>
+        {context}
+        <context>
+        Questions:{input}
+        """
+    )
 
-    return jsonify({"message": "Text saved"}), 200
+
+vector_store = None
 
 
-@socketio.on("connect")
-def on_connect():
-    print("SocketIO connection established")
-    emit("message", {"info": "SocketIO connection established"})
+def initialize_vector_store():
+    global vector_store
+    embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+    loader = PyPDFDirectoryLoader("./doms")
+    docs = loader.load()
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+    final_documents = text_splitter.split_documents(docs[:20])
+    vector_store = FAISS.from_documents(final_documents, embeddings)
 
 
-@socketio.on("start_stream")
-def on_start_stream():
-    with open("text.txt", "r") as file:
-        text = file.read()
-        for line in text.split("\n"):
-            for word in line.split(" "):
-                time.sleep(0.25)
-                print(word)
-                emit("message", {"text": word + " "})
+@app.route("/ask", methods=["POST"])
+def ask():
+    global vector_store
+    question = request.json.get("question")
+    if not question:
+        return jsonify({"error": "No question provided."}), 400
+
+    if vector_store:
+        document_chain = create_stuff_documents_chain(llm, get_prompt())
+        retriever = vector_store.as_retriever()
+        retrieval_chain = create_retrieval_chain(retriever, document_chain)
+
+        start = time.process_time()
+        response = retrieval_chain.invoke({"input": question})
+        end = time.process_time()
+
+        # Log fetched document parts
+        for doc in response["context"]:
+            # logging.info(f"Fetched Document: {doc.page_content}")
+            print(f"Fetched Document: {doc.page_content}")
+
+        return jsonify(
+            {
+                "response_time": f"{end - start:.2f} seconds",
+                "answer": response["answer"],
+            }
+        )
+    else:
+        return jsonify({"error": "Vector store is not initialized."}), 500
+
+
+@app.route("/tell", methods=["POST"])
+def tell():
+    global vector_store
+    document_content = request.json.get("context")
+    if not document_content:
+        return jsonify({"error": "No document provided."}), 400
+
+    if vector_store:
+        embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=1000, chunk_overlap=200
+        )
+        document = Document(page_content=document_content)
+        final_documents = text_splitter.split_documents([document])
+        vector_store = FAISS.from_documents(final_documents, embeddings)
+        return jsonify({"message": "Document added to the vector store."})
+    else:
+        return jsonify({"error": "Vector store is not initialized."}), 500
+
+
+@app.route("/reset", methods=["POST"])
+def reset():
+    global vector_store
+    vector_store = None
+    initialize_vector_store()
+    return jsonify({"message": "Vector store reset."})
 
 
 if __name__ == "__main__":
-    socketio.run(app, debug=True)
+    initialize_vector_store()
+    app.run(debug=True)

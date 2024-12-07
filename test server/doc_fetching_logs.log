@@ -1,0 +1,128 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-496-422
+INFO:faiss.loader:Loading faiss with AVX2 support.
+INFO:faiss.loader:Successfully loaded faiss with AVX2 support.
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:faiss.loader:Loading faiss with AVX2 support.
+WARNING:werkzeug: * Debugger is active!
+INFO:faiss.loader:Successfully loaded faiss with AVX2 support.
+INFO:werkzeug: * Debugger PIN: 130-496-422
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:faiss.loader:Loading faiss with AVX2 support.
+INFO:faiss.loader:Successfully loaded faiss with AVX2 support.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-496-422
+INFO:faiss.loader:Loading faiss with AVX2 support.
+INFO:faiss.loader:Successfully loaded faiss with AVX2 support.
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:faiss.loader:Loading faiss with AVX2 support.
+INFO:faiss.loader:Successfully loaded faiss with AVX2 support.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-496-422
+INFO:werkzeug:127.0.0.1 - - [05/Dec/2024 11:43:14] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Dec/2024 11:43:14] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Dec/2024 11:43:14] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Dec/2024 11:43:14] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Dec/2024 11:43:15] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Dec/2024 11:43:15] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Dec/2024 11:43:15] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Dec/2024 11:43:15] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Dec/2024 11:43:15] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Dec/2024 11:43:15] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=fQChaW1QHvr8YQKBKY44 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Dec/2024 11:43:15] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=fQChaW1QHvr8YQKBKY44 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Dec/2024 11:43:15] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=fQChaW1QHvr8YQKBKY44 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Dec/2024 11:43:15] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:faiss.loader:Loading faiss with AVX2 support.
+INFO:faiss.loader:Successfully loaded faiss with AVX2 support.
+INFO:werkzeug: * Detected change in 'C:\\Users\\Shivang\\OfficeAddinApps\\word2\\test server\\test.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-496-422
+INFO:faiss.loader:Loading faiss with AVX2 support.
+INFO:faiss.loader:Successfully loaded faiss with AVX2 support.
+INFO:httpx:HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Fetched Document: 14. I have work experience in process engineering (oil and gas field); however, I would like to 
+transition into supply chain management in future. Will this course enable me to do the same? 
+    - Yes, the program is ideal for professionals seeking to advance their careers in leadership 
+roles by learning digital technologies applications in maritime and supply chain sectors. 
+15. I graduated with a B Com with 59.50% and an MBA with 67%. Am I eligible for the 
+program? 
+   - You will be eligible for the program based on your PG degree. 
+16. I'm a graduate with a bachelor's in Nautical Science. I seek your guidance in building my 
+academic and professional career as well. 
+    Below are the unique features of Online MBA Digital Maritime and Supply chain Program: 
+I. Integration of AI, ML, IoT, and Blockchain technologies in Maritime Supply Chain 
+II. Designed for global professionals to enhance career mobility. 
+III. Live project collaborations with industry leaders.
+INFO:root:Fetched Document: 39. Will they have an online teaching assistant (via WhatsApp) to discuss doubts outside class 
+hours? 
+An online teaching assistant will be available to support you, answer your questions, and 
+guide the course, ensuring you have the help you need to succeed.
+INFO:root:Fetched Document: 36. How will the candidates posted on a ship do the group assignments? Will they get individual 
+or group assignments? 
+For group projects, the group will be created online. Each member will be assigned specific 
+tasks to complete individually. 
+ 
+37. Is there any possibility for foreign exchange programs?  
+As this is our first program, we have not finalised it yet. However, given the nature of online 
+education, we are considering the inclusion of one or two international hubs , such as Dubai, 
+Singapore, or Hong Kong.  
+ 
+38. Will this degree be eligible for PhD in future? 
+This MBA degree qualifies you to pursue  a PhD in the future. It provides the foundational 
+knowledge and research skills necessary for advanced academic and professional research 
+opportunities. 
+39. Will they have an online teaching assistant (via WhatsApp) to discuss doubts outside class 
+hours? 
+An online teaching assistant will be available to support you, answer your questions, and
+INFO:root:Fetched Document: Online MBA for Digital Maritime and Supply Chain – FAQ’s 
+Program Overview 
+1. What is the Online MBA for Digital Maritime and Supply Chain? 
+   - This program is a specialised MBA designed to equip professionals with advanced 
+knowledge and skills in the maritime and supply chain sectors. IIT Madras offers it in 
+collaboration with i-maritime. 
+2. What are the unique features of the program? 
+   - Integration of AI, ML, IoT, and Blockchain technologies in Maritime Supply Chain 
+   - Designed for global professionals to enhance career mobility 
+   - Live project collaborations with industry leaders 
+   - Access to IIT Madras's Incubation and Start-up Platform 
+   - International networking opportunities 
+   - Eight on-campus immersion sessions 
+   - IIT Madras Alumni status upon completion 
+   - Flexible duration: 2 years (extendable to 4 years) 
+   - Interaction with industry experts and mentors 
+3. What are the prospects after this course?
+INFO:werkzeug:127.0.0.1 - - [05/Dec/2024 11:45:58] "POST /ask HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Dec/2024 12:00:24] "OPTIONS /ask HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Dec/2024 12:00:25] "OPTIONS /ask HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Shivang\\OfficeAddinApps\\word2\\test server\\app.py', reloading
+INFO:faiss.loader:Loading faiss with AVX2 support.
+INFO:faiss.loader:Successfully loaded faiss with AVX2 support.
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+INFO:faiss.loader:Loading faiss with AVX2 support.
+INFO:faiss.loader:Successfully loaded faiss with AVX2 support.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-496-422
+INFO:werkzeug: * Detected change in 'C:\\Users\\Shivang\\OfficeAddinApps\\word2\\test server\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat

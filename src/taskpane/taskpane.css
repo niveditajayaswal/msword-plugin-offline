@@ -1,0 +1,31 @@
+.chatbot-container {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+.chatbot-form input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.chatbot-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.chatbot-form button:disabled {
+    background-color: #ccc;
+}
+.chatbot-response {
+    margin-top: 20px;
+    text-align: left;
+}
+.error {
+    color: red;
+}

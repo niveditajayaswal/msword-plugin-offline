@@ -29,16 +29,18 @@ export async function getSelectedData(): Promise<string> {
 }
 
 export async function getDocumentText() {
+  let text = "";
   try {
     await Word.run(async (context) => {
       const body = context.document.body;
       body.load("text");
       await context.sync();
-      return body.text;
+      text = body.text;
     });
   } catch (error) {
     console.log("Error: " + error);
   }
+  return text;
 }
 
 export async function writeToDocument(text: string) {
@@ -71,14 +73,12 @@ export async function addLoremIpsum() {
   insertText(text);
 }
 
-export async function addParagraph() {
+export async function addParagraph(text: string = "") {
   try {
     await Word.run(async (context) => {
       const body = context.document.body;
       let paragraph = body.paragraphs.getLast();
-      paragraph = paragraph.insertParagraph("New paragraph", Word.InsertLocation.after);
-      paragraph.font.bold = true;
-      paragraph.font.color = "blue";
+      paragraph = paragraph.insertParagraph(text, Word.InsertLocation.after);
     });
   } catch (error) {
     console.log("Error: " + error);
